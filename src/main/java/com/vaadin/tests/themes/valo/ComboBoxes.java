@@ -27,6 +27,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 public class ComboBoxes extends VerticalLayout implements View {
+
     public ComboBoxes() {
         setMargin(true);
 
@@ -40,6 +41,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         addComponent(row);
 
         ComboBox combo = new ComboBox("Normal");
+        combo.setId("normal-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setNullSelectionAllowed(false);
@@ -56,6 +58,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(group);
 
         combo = new ComboBox();
+        combo.setId("grouped-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setNullSelectionAllowed(false);
@@ -68,6 +71,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         group.addComponent(today);
 
         combo = new ComboBox("Explicit size");
+        combo.setId("explicit-size-combobox");
         combo.setInputPrompt("You can type here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -77,6 +81,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("No text input allowed");
+        combo.setId("no-text-input-allowed-combobox");
         combo.setInputPrompt("You can click here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -87,6 +92,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Error");
+        combo.setId("error-combobox");
         combo.setInputPrompt("You can type here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -97,6 +103,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Error, borderless");
+        combo.setId("error-borderless-combobox");
         combo.setInputPrompt("You can type here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -108,6 +115,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Disabled");
+        combo.setId("disabled-combobox");
         combo.setInputPrompt("You can't type here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -116,6 +124,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Custom color");
+        combo.setId("custom-color1-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -124,6 +133,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Custom color");
+        combo.setId("custom-color2-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -132,6 +142,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Custom color");
+        combo.setId("custom-color3-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -140,6 +151,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Small");
+        combo.setId("small-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -148,6 +160,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Large");
+        combo.setId("large-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -156,6 +169,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Borderless");
+        combo.setId("borderless-combobox");
         combo.setInputPrompt("You can type here");
         combo.addItem("Option One");
         combo.addItem("Option Two");
@@ -164,6 +178,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Tiny");
+        combo.setId("tiny-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);
@@ -172,6 +187,7 @@ public class ComboBoxes extends VerticalLayout implements View {
         row.addComponent(combo);
 
         combo = new ComboBox("Huge");
+        combo.setId("huge-combobox");
         combo.setInputPrompt("You can type here");
         combo.setContainerDataSource(ValoThemeUI.generateContainer(200, false));
         combo.setItemCaptionPropertyId(ValoThemeUI.CAPTION_PROPERTY);

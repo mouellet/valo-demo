@@ -29,6 +29,7 @@ import com.vaadin.ui.VerticalLayout;
  * @author Vaadin Ltd
  */
 public class Labels extends VerticalLayout implements View {
+
     public Labels() {
         setMargin(true);
         addStyleName("content-labels");
@@ -78,6 +79,7 @@ public class Labels extends VerticalLayout implements View {
 
         normal = new Label(
                 "Normal type for plain text. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu.");
+        normal.addStyleName("normal");
         left.addComponent(normal);
 
         Panel p = new Panel("Additional Label Styles");

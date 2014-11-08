@@ -85,6 +85,7 @@ public class Tables extends VerticalLayout implements View {
                 small, rowIndex, rowCaption, rowIcon, componentsInCells);
 
         ValueChangeListener update = new ValueChangeListener() {
+
             @Override
             public void valueChange(ValueChangeEvent event) {
                 if (table == null) {
@@ -131,6 +132,22 @@ public class Tables extends VerticalLayout implements View {
         rowIcon.addValueChangeListener(update);
         componentsInCells.addValueChangeListener(update);
 
+        hierarchical.setId("hierarchical");
+        footer.setId("footer");
+        sized.setId("sized");
+        expandRatios.setId("expandRatios");
+        stripes.setId("stripes");
+        verticalLines.setId("verticalLines");
+        horizontalLines.setId("horizontalLines");
+        borderless.setId("borderless");
+        headers.setId("headers");
+        compact.setId("compact");
+        small.setId("small");
+        rowIndex.setId("rowIndex");
+        rowCaption.setId("rowCaption");
+        rowIcon.setId("rowIcon");
+        componentsInCells.setId("componentsInCells");
+
         footer.setValue(false);
 
     }
@@ -149,6 +166,7 @@ public class Tables extends VerticalLayout implements View {
         table.addActionHandler(ValoThemeUI.getActionHandler());
         table.setDragMode(TableDragMode.MULTIROW);
         table.setDropHandler(new DropHandler() {
+
             @Override
             public AcceptCriterion getAcceptCriterion() {
                 return AcceptAll.get();
@@ -184,6 +202,7 @@ public class Tables extends VerticalLayout implements View {
         if (componentsInRows) {
             table.addContainerProperty("textfield", TextField.class, null);
             table.addGeneratedColumn("textfield", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -199,6 +218,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("datefield", TextField.class, null);
             table.addGeneratedColumn("datefield", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -213,6 +233,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("combobox", TextField.class, null);
             table.addGeneratedColumn("combobox", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -228,6 +249,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("button", Button.class, null);
             table.addGeneratedColumn("button", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -239,6 +261,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("label", TextField.class, null);
             table.addGeneratedColumn("label", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -251,6 +274,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("checkbox", TextField.class, null);
             table.addGeneratedColumn("checkbox", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -261,6 +285,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("optiongroup", TextField.class, null);
             table.addGeneratedColumn("optiongroup", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -274,6 +299,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("slider", TextField.class, null);
             table.addGeneratedColumn("slider", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {
@@ -285,6 +311,7 @@ public class Tables extends VerticalLayout implements View {
 
             table.addContainerProperty("progress", TextField.class, null);
             table.addGeneratedColumn("progress", new ColumnGenerator() {
+
                 @Override
                 public Object generateCell(Table source, Object itemId,
                         Object columnId) {

@@ -69,7 +69,7 @@ public class ValoThemeUI extends UI {
     private boolean testMode = false;
 
     @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = true, ui = ValoThemeUI.class)
+    @VaadinServletConfiguration(productionMode = false, ui = ValoThemeUI.class)
     public static class Servlet extends VaadinServlet {
 
         @Override
@@ -349,12 +349,18 @@ public class ValoThemeUI extends UI {
                 label.setSizeUndefined();
                 menuItemsLayout.addComponent(label);
             }
-            final Button b = new Button(item.getValue(), new ClickListener() {
-                @Override
-                public void buttonClick(final ClickEvent event) {
-                    navigator.navigateTo(item.getKey());
+            final Button b = new Button() {
+                {
+                    setId(item.getKey());
+                    setCaption(item.getValue());
+                    addClickListener(new ClickListener() {
+                        @Override
+                        public void buttonClick(final ClickEvent event) {
+                            navigator.navigateTo(item.getKey());
+                        }
+                    });
                 }
-            });
+            };
             if (count == 2) {
                 b.setCaption(b.getCaption()
                         + " <span class=\"valo-menu-badge\">123</span>");
