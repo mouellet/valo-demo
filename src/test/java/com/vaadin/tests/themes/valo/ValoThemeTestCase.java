@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.vaadin.testbench.TestBench;
 import com.vaadin.testbench.TestBenchElement;
 import com.vaadin.testbench.TestBenchTestCase;
+import com.vaadin.testbench.elements.LabelElement;
 import com.vaadin.testbench.elements.TableRowElement;
 import com.vaadin.testbench.support.TestBenchPageFactory;
 import com.vaadin.tests.themes.valo.pageobject.AbstractValoUIElement;
@@ -58,8 +61,14 @@ public class ValoThemeTestCase extends TestBenchTestCase {
 
     @Test
     public void labelsPage_hugeLabelValue_valid() {
-        page = page.navigateTo("labels");
-        assertEquals("Huge type for display text.", ((ValoLabelsElement) page).huge.getText());
+        try {
+            page = page.navigateTo("labels");
+            String caption = ((ValoLabelsElement) page).huge.getText();
+            assertEquals("Huge type for display text.", caption);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            fail();
+        }
     }
 
     @Test
@@ -93,11 +102,27 @@ public class ValoThemeTestCase extends TestBenchTestCase {
                     containsValue = true;
                 }
             }
+
         } catch (NoSuchElementException e) {
             fail();
         }
 
         assertTrue(containsValue);
+    }
+
+    @Test
+    public void labelsPage_elementQueryVaadinSelector_example() {
+        try {
+            ValoLabelsElement labelsPage = (ValoLabelsElement) page.navigateTo("labels");
+            List<LabelElement> elements = labelsPage.content.$(LabelElement.class).all();
+            LabelElement elFirst = labelsPage.content.$(LabelElement.class).first();
+            LabelElement el4 = labelsPage.content.$(LabelElement.class).index(4).first();
+            LabelElement elCaption = labelsPage.content.$(LabelElement.class).caption("Huge type for display text.").first();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
     }
 
     @After

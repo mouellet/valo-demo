@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import com.vaadin.testbench.elements.LabelElement;
+import com.vaadin.testbench.support.FindByVaadin;
 
 public class ValoLabelsElement extends AbstractValoUIElement {
 
@@ -19,7 +20,7 @@ public class ValoLabelsElement extends AbstractValoUIElement {
     @FindBy(className = "v-label-h4")
     public LabelElement h4;
 
-    @FindBy(className = "v-label-huge")
+    @FindByVaadin(index = 4)
     public LabelElement huge;
 
     @FindBy(className = "v-label-large")

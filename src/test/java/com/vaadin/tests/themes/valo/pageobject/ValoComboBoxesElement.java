@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import com.vaadin.testbench.elements.ComboBoxElement;
+import com.vaadin.testbench.support.FindByVaadin;
 
 public class ValoComboBoxesElement extends AbstractValoUIElement {
 
@@ -37,7 +38,7 @@ public class ValoComboBoxesElement extends AbstractValoUIElement {
     @FindBy(id = "custom-color3-combobox")
     public ComboBoxElement customColor3;
 
-    @FindBy(id = "huge-combobox")
+    @FindByVaadin(caption = "Huge")
     public ComboBoxElement huge;
 
     @FindBy(id = "large-combobox")
