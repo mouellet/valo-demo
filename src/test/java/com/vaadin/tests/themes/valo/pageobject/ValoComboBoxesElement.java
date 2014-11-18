@@ -1,5 +1,7 @@
 package com.vaadin.tests.themes.valo.pageobject;
 
+import static org.junit.Assert.assertFalse;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,49 +11,53 @@ import com.vaadin.testbench.support.FindByVaadin;
 public class ValoComboBoxesElement extends AbstractValoUIElement {
 
     @FindBy(id = "normal-combobox")
-    public ComboBoxElement normal;
+    private ComboBoxElement normal;
 
     @FindBy(id = "grouped-combobox")
-    public ComboBoxElement grouped;
+    private ComboBoxElement grouped;
 
     @FindBy(id = "explicit-size-combobox")
-    public ComboBoxElement explicitSize;
+    private ComboBoxElement explicitSize;
 
     @FindBy(id = "no-text-input-allowed-combobox")
-    public ComboBoxElement noTextInputAllowed;
+    private ComboBoxElement noTextInputAllowed;
 
     @FindBy(id = "error-combobox")
-    public ComboBoxElement error;
+    private ComboBoxElement error;
 
     @FindBy(id = "error-borderless-combobox")
-    public ComboBoxElement errorBorderless;
+    private ComboBoxElement errorBorderless;
 
     @FindBy(id = "disabled-combobox")
-    public ComboBoxElement disabled;
+    private ComboBoxElement disabled;
 
     @FindBy(id = "custom-color1-combobox")
-    public ComboBoxElement customColor1;
+    private ComboBoxElement customColor1;
 
     @FindBy(id = "custom-color2-combobox")
-    public ComboBoxElement customColor2;
+    private ComboBoxElement customColor2;
 
     @FindBy(id = "custom-color3-combobox")
-    public ComboBoxElement customColor3;
+    private ComboBoxElement customColor3;
 
     @FindByVaadin(caption = "Huge")
-    public ComboBoxElement huge;
+    private ComboBoxElement huge;
 
     @FindBy(id = "large-combobox")
-    public ComboBoxElement large;
+    private ComboBoxElement large;
 
     @FindBy(id = "small-combobox")
-    public ComboBoxElement small;
+    private ComboBoxElement small;
 
     @FindBy(id = "tiny-combobox")
-    public ComboBoxElement tiny;
+    private ComboBoxElement tiny;
 
     @FindBy(id = "borderless-combobox")
-    public ComboBoxElement borderless;
+    private ComboBoxElement borderless;
+
+    public void checkDisabledIsNotEnabled() {
+        assertFalse(disabled.isEnabled());
+    }
 
     public ValoComboBoxesElement(WebDriver driver) {
         super(driver);

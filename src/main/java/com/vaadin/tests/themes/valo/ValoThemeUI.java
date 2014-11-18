@@ -137,9 +137,9 @@ public class ValoThemeUI extends UI {
 
         navigator = new Navigator(this, viewDisplay);
 
-        navigator.addView("common", CommonParts.class);
+        navigator.addView("commonParts", CommonParts.class);
         navigator.addView("labels", Labels.class);
-        navigator.addView("buttons-and-links", ButtonsAndLinks.class);
+        navigator.addView("buttonsAndLinks", ButtonsAndLinks.class);
         navigator.addView("textfields", TextFields.class);
         navigator.addView("datefields", DateFields.class);
         navigator.addView("comboboxes", ComboBoxes.class);
@@ -161,7 +161,7 @@ public class ValoThemeUI extends UI {
 
         final String f = Page.getCurrent().getUriFragment();
         if (f == null || f.equals("")) {
-            navigator.navigateTo("common");
+            navigator.navigateTo("commonParts");
         }
 
         navigator.setErrorView(CommonParts.class);
@@ -250,9 +250,9 @@ public class ValoThemeUI extends UI {
 
     CssLayout buildMenu() {
         // Add items
-        menuItems.put("common", "Common UI Elements");
+        menuItems.put("commonParts", "Common UI Elements");
         menuItems.put("labels", "Labels");
-        menuItems.put("buttons-and-links", "Buttons & Links");
+        menuItems.put("buttonsAndLinks", "Buttons & Links");
         menuItems.put("textfields", "Text Fields");
         menuItems.put("datefields", "Date Fields");
         menuItems.put("comboboxes", "Combo Boxes");
@@ -280,6 +280,7 @@ public class ValoThemeUI extends UI {
         menu.addComponent(createThemeSelect());
 
         final Button showMenu = new Button("Menu", new ClickListener() {
+
             @Override
             public void buttonClick(final ClickEvent event) {
                 if (menu.getStyleName().contains("valo-menu-visible")) {
@@ -350,10 +351,12 @@ public class ValoThemeUI extends UI {
                 menuItemsLayout.addComponent(label);
             }
             final Button b = new Button() {
+
                 {
                     setId(item.getKey());
                     setCaption(item.getValue());
                     addClickListener(new ClickListener() {
+
                         @Override
                         public void buttonClick(final ClickEvent event) {
                             navigator.navigateTo(item.getKey());
@@ -390,6 +393,7 @@ public class ValoThemeUI extends UI {
 
         ns.setValue("tests-valo");
         ns.addValueChangeListener(new ValueChangeListener() {
+
             @Override
             public void valueChange(final ValueChangeEvent event) {
                 setTheme((String) ns.getValue());
@@ -399,6 +403,7 @@ public class ValoThemeUI extends UI {
     }
 
     static Handler actionHandler = new Handler() {
+
         private final Action ACTION_ONE = new Action("Action One");
         private final Action ACTION_TWO = new Action("Action Two");
         private final Action ACTION_THREE = new Action("Action Three");
